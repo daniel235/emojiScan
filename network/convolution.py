@@ -25,8 +25,12 @@ class faceConvolution:
     # function to create structure of convolution neural network
     def convNet(self, data, inputs):
         input_layer = tf.reshape(data, [-1, 28, 28, 1])
-        convOne = tf.layers.conv2d(input_layer, 32, self.k_size, strides=self.stride, activation=tf.nn.relu)
-        tf.layers.max_pooling2d(convOne)
+        convOne = tf.layers.conv2d(inputs=input_layer, filters=32, kernel_size=self.k_size, padding="same", activation=tf.nn.relu)
+        pool1 = tf.layers.max_pooling2d(inputs=convOne, pool_size=[2,2], strides=2)
+
+        convTwo = tf.layers.conv2d(inputs=pool1, filters=64, kernel_size=self.k_size, padding="same", activation=tf.nn.relu)
+        pool2 = tf.layers.max_pooling2d(inputs=convTwo, pool_size=[2,2], strides=2)
+        
 
     def run(self):
         stride = self.stride
