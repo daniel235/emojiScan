@@ -1,5 +1,7 @@
 import tensorflow as tf
-
+import numpy as np
+import matplotlib.pyplot as plt
+import os
 #planning data
 
 #figure out image size
@@ -8,19 +10,48 @@ import tensorflow as tf
 
 class faceConvolution:
     def __init__(self):
-        self.__init__()
+        #self.__init__()
         self.stride = (2,2)
         self.k_size = [5,5]
         self.train_size = None
         self.test_size = None
         self.train = None
         self.test = None
+        self.happy = 0
+        self.sad = 1
+        self.confused = 2
 
-    def prepare_data(self, data):
+    def prepare_data(self):
         # need to get labels
-        size = len(data)
-        self.train_size = .70 * size
-        self.test_size = .30 * size
+        dataX = []
+        dataY = []
+        imsHappy = os.listdir("./network/data/happy")
+        imsSad = os.listdir("./network/data/sad")
+        imsConfused = os.listdir("./network/data/confused")
+        for i in imsHappy:
+            dataX.append(plt.imread("./network/data/happy/" + i))
+            dataY.append(self.happy)
+
+        for i in imsSad:
+            dataX.append(plt.imread("./network/data/sad/" + i))
+            dataY.append(self.sad)
+
+        for i in imsConfused:
+            dataX.append(plt.imread("./network/data/confused/" + i))
+            dataY.append(self.confused)
+
+        size = len(dataX)
+        self.train_size = int(.70 * size)
+        self.test_size = int(.30 * size)
+
+        trainX = dataX[:self.train_size]
+        trainY = dataY[:self.train_size]
+
+        testX = dataX[self.train_size:]
+        testY = dataY[self.train_size:]
+
+        print(testX)
+
 
     # function to create structure of convolution neural network
     def convNet(self, features, labels, mode):
@@ -69,7 +100,7 @@ class faceConvolution:
 
 
 
-    def run(self):
+    def run(self, train_data, train_labels, eval_data, eval_labels):
         # creating the estimator
         face_classifier = tf.estimator.Estimator(model_fn=self.convNet, model_dir="./data/testData")
         tensors_to_log = {"probabilities": "softmax_tensor"}
@@ -82,7 +113,7 @@ class faceConvolution:
             batch_size=100,
             num_epochs=None,
             shuffle=True)
-        mnist_classifier.train(
+        face_classifier.train(
             input_fn=train_input_fn,
             steps=20000,
             hooks=[logging_hook])
@@ -93,5 +124,5 @@ class faceConvolution:
             y=eval_labels,
             num_epochs=1,
             shuffle=False)
-        eval_results = mnist_classifier.evaluate(input_fn=eval_input_fn)
+        eval_results = face_classifier.evaluate(input_fn=eval_input_fn)
         print(eval_results)
