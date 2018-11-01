@@ -20,6 +20,10 @@ class faceConvolution:
         self.happy = 0
         self.sad = 1
         self.confused = 2
+        self.trainX = None
+        self.trainY = None
+        self.testX = None
+        self.testY = None
 
     def prepare_data(self):
         # need to get labels
@@ -44,13 +48,12 @@ class faceConvolution:
         self.train_size = int(.70 * size)
         self.test_size = int(.30 * size)
 
-        trainX = dataX[:self.train_size]
-        trainY = dataY[:self.train_size]
+        self.trainX = np.array(dataX[:self.train_size])
+        self.trainY = np.array(dataY[:self.train_size])
 
-        testX = dataX[self.train_size:]
-        testY = dataY[self.train_size:]
+        self.testX = np.array(dataX[self.train_size:])
+        self.testY = np.array(dataY[self.train_size:])
 
-        print(testX)
 
 
     # function to create structure of convolution neural network

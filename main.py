@@ -10,7 +10,7 @@ s.startScan()
 
 f = faceConvolution()
 f.prepare_data()
-
+f.run(f.trainX, f.trainY, f.testX, f.testY)
 
 
 k_size = [5,5]
