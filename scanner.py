@@ -10,9 +10,6 @@ class Scanner:
 
     #capture face
     def startScan(self):
-        im = cv2.imread("./network/data/happy/smile.jpg")
-        im = cv2.resize(im, (28,28), interpolation=cv2.INTER_CUBIC)
-
         cap = cv2.VideoCapture(0)
 
         while True:
