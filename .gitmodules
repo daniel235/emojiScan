@@ -1,3 +1,6 @@
 [submodule "network/network/pi-rc"]
 	path = network/network/pi-rc
 	url = https://github.com/bskari/pi-rc.git
+[submodule "network/pi-rc"]
+	path = network/pi-rc
+	url = https://github.com/bskari/pi-rc.git
