@@ -17,9 +17,6 @@ class faceConvolution:
         self.test_size = None
         self.train = None
         self.test = None
-        self.happy = 0
-        self.sad = 1
-        self.confused = 2
         self.trainX = None
         self.trainY = None
         self.testX = None
@@ -29,20 +26,6 @@ class faceConvolution:
         # need to get labels
         dataX = []
         dataY = []
-        imsHappy = os.listdir("./network/data/happy")
-        imsSad = os.listdir("./network/data/sad")
-        imsConfused = os.listdir("./network/data/confused")
-        for i in imsHappy:
-            dataX.append(plt.imread("./network/data/happy/" + i))
-            dataY.append(self.happy)
-
-        for i in imsSad:
-            dataX.append(plt.imread("./network/data/sad/" + i))
-            dataY.append(self.sad)
-
-        for i in imsConfused:
-            dataX.append(plt.imread("./network/data/confused/" + i))
-            dataY.append(self.confused)
 
         size = len(dataX)
         self.train_size = int(.70 * size)
@@ -105,7 +88,7 @@ class faceConvolution:
 
     def run(self, train_data, train_labels, eval_data, eval_labels):
         # creating the estimator
-        face_classifier = tf.estimator.Estimator(model_fn=self.convNet, model_dir="./data/testData")
+        track_classifier = tf.estimator.Estimator(model_fn=self.convNet, model_dir="./data/testData")
         tensors_to_log = {"probabilities": "softmax_tensor"}
         logging_hook = tf.train.LoggingTensorHook(
             tensors=tensors_to_log, every_n_iter=50)
@@ -116,9 +99,9 @@ class faceConvolution:
             batch_size=100,
             num_epochs=None,
             shuffle=True)
-        face_classifier.train(
+        track_classifier.train(
             input_fn=train_input_fn,
-            steps=20000,
+            steps=2000,
             hooks=[logging_hook])
 
         # Evaluate the model and print results
@@ -127,5 +110,5 @@ class faceConvolution:
             y=eval_labels,
             num_epochs=1,
             shuffle=False)
-        eval_results = face_classifier.evaluate(input_fn=eval_input_fn)
+        eval_results = track_classifier.evaluate(input_fn=eval_input_fn)
         print(eval_results)
