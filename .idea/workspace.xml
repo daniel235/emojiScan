@@ -2,18 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0ade4954-2977-4305-8fae-08342ded68dd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/game/car.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/game/images/car.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/game/track.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/network/dqn.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/network/rasberryPi/clienComm.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/network/rasberryPi/serverComm.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/network/rasberryPi/client.py" beforeDir="false" afterPath="$PROJECT_DIR$/network/rasberryPi/client.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/network/rasberryPi/server.py" beforeDir="false" afterPath="$PROJECT_DIR$/network/rasberryPi/server.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/car.py" beforeDir="false" afterPath="$PROJECT_DIR$/game/car.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/track.py" beforeDir="false" afterPath="$PROJECT_DIR$/game/track.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/network/dqn.py" beforeDir="false" afterPath="$PROJECT_DIR$/network/dqn.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,110 +17,103 @@
     <session id="1556773276">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="34" />
+          <entry key="project.closed" value="38" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.1" value="6" />
-          <entry key="project.open.time.10" value="3" />
+          <entry key="project.open.time.10" value="4" />
           <entry key="project.open.time.13" value="1" />
           <entry key="project.open.time.17" value="1" />
           <entry key="project.open.time.19" value="1" />
           <entry key="project.open.time.31" value="1" />
           <entry key="project.open.time.5" value="1" />
-          <entry key="project.open.time.6" value="4" />
-          <entry key="project.open.time.7" value="5" />
+          <entry key="project.open.time.6" value="5" />
+          <entry key="project.open.time.7" value="7" />
           <entry key="project.open.time.8" value="8" />
           <entry key="project.open.time.9" value="3" />
-          <entry key="project.opened" value="36" />
+          <entry key="project.opened" value="40" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="jpg" value="36" />
-          <entry key="py" value="25" />
+          <entry key="py" value="26" />
           <entry key="pyi" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Image" value="36" />
-          <entry key="Python" value="25" />
+          <entry key="Python" value="26" />
           <entry key="PythonStub" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="8" />
-          <entry key="py" value="11268" />
+          <entry key="py" value="12989" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="8" />
-          <entry key="Python" value="11268" />
+          <entry key="Python" value="12989" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/game/track.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="504">
-                  <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
-                  <folding>
-                    <element signature="e#0#13#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/main.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="162">
-                  <caret line="9" selection-start-line="9" selection-end-line="9" />
-                  <folding>
-                    <element signature="e#0#20#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/game/car.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="270">
-                  <caret line="15" column="21" lean-forward="true" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="21" />
-                  <folding>
-                    <marker date="1542047853718" expanded="true" signature="25:30" ph="..." />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/network/dqn.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="90">
-                  <caret line="5" column="23" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
-                  <folding>
-                    <element signature="e#0#23#0" expanded="true" />
-                    <marker date="1542047853640" expanded="true" signature="62:67" ph="..." />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+              <folding>
+                <element signature="e#0#20#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/game/car.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="324">
+              <caret line="18" selection-start-line="18" selection-end-line="18" />
+              <folding>
+                <marker date="1542048184180" expanded="true" signature="25:30" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/game/track.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="702">
+              <caret line="42" column="20" selection-start-line="42" selection-start-column="20" selection-end-line="42" selection-end-column="20" />
+              <folding>
+                <element signature="e#0#13#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/network/dqn.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="504">
+              <caret line="174" column="53" lean-forward="true" selection-start-line="174" selection-start-column="53" selection-end-line="174" selection-end-column="53" />
+              <folding>
+                <element signature="e#0#23#0" expanded="true" />
+                <marker date="1542313685313" expanded="true" signature="385:390" ph="..." />
+                <marker date="1542313685313" expanded="true" signature="668:674" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -145,17 +130,16 @@
         <option value="$PROJECT_DIR$/network/rasberryPi/clienComm.py" />
         <option value="$PROJECT_DIR$/network/rasberryPi/serverComm.py" />
         <option value="$PROJECT_DIR$/main.py" />
+        <option value="$PROJECT_DIR$/game/car.py" />
         <option value="$PROJECT_DIR$/game/track.py" />
         <option value="$PROJECT_DIR$/network/dqn.py" />
-        <option value="$PROJECT_DIR$/game/car.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-12" />
-    <option name="y" value="-12" />
-    <option name="width" value="2280" />
-    <option name="height" value="1527" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-11" />
+    <option name="width" value="1148" />
+    <option name="height" value="1454" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -174,11 +158,6 @@
               <item name="mlClass" type="b2602c69:ProjectViewProjectNode" />
               <item name="mlClass" type="462c0819:PsiDirectoryNode" />
               <item name="game" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mlClass" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mlClass" type="462c0819:PsiDirectoryNode" />
-              <item name="network" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -346,15 +325,15 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1519" height="977" extended-state="6" />
+    <frame x="-7" y="0" width="765" height="969" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14979757" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.30494505" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32938388" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49932525" weight="0.32938388" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49932525" weight="0.32894737" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -472,12 +451,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="432">
           <caret line="24" column="27" lean-forward="true" selection-start-line="24" selection-start-column="27" selection-end-line="24" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-            <marker date="1541467453697" expanded="true" signature="179:184" ph="..." />
-            <marker date="1541467453697" expanded="true" signature="502:936" ph="..." />
-            <marker date="1541467453697" expanded="true" signature="1107:1112" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -485,27 +458,23 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/network/dqn.py">
+    <entry file="file://$PROJECT_DIR$/game/car.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="23" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
+        <state relative-caret-position="324">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
           <folding>
-            <element signature="e#0#23#0" expanded="true" />
-            <marker date="1542047853640" expanded="true" signature="62:67" ph="..." />
+            <marker date="1542048184180" expanded="true" signature="25:30" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/game/track.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
+        <state relative-caret-position="702">
+          <caret line="42" column="20" selection-start-line="42" selection-start-column="20" selection-end-line="42" selection-end-column="20" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>
@@ -514,20 +483,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        <state relative-caret-position="270">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/game/car.py">
+    <entry file="file://$PROJECT_DIR$/network/dqn.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="15" column="21" lean-forward="true" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="21" />
+        <state relative-caret-position="504">
+          <caret line="174" column="53" lean-forward="true" selection-start-line="174" selection-start-column="53" selection-end-line="174" selection-end-column="53" />
           <folding>
-            <marker date="1542047853718" expanded="true" signature="25:30" ph="..." />
+            <element signature="e#0#23#0" expanded="true" />
+            <marker date="1542313685313" expanded="true" signature="385:390" ph="..." />
+            <marker date="1542313685313" expanded="true" signature="668:674" ph="..." />
           </folding>
         </state>
       </provider>

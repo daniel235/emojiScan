@@ -4,7 +4,7 @@ class Car:
     def __init__(self, id):
         self.id = id
         self.car = None
-        self.x = 840 / 2
+        self.x = 835 / 2
         self.y = 720
         self.destination = None
 

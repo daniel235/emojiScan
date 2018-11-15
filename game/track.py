@@ -27,6 +27,19 @@ class track:
             elif event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE:
                 return True
 
+            #input
+            elif event.type == pygame.KEYDOWN and event.key == pygame.K_w:
+                self.car.control(0)
+
+            elif event.type == pygame.KEYDOWN and event.key == pygame.K_s:
+                self.car.control(2)
+
+            elif event.type == pygame.KEYDOWN and event.key == pygame.K_d:
+                self.car.control(1)
+
+            elif event.type == pygame.KEYDOWN and event.key == pygame.K_a:
+                self.car.control(3)
+
         return False
 
 
