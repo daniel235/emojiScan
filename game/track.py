@@ -52,6 +52,9 @@ class track:
     def drawCar(self):
         self.screen.blit(self.car.car, (self.car.x, self.car.y))
 
+    def save_image(self):
+        pass
+
 
 
 

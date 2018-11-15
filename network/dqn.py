@@ -21,18 +21,18 @@ class Environment:
         self.reward = 0
         self.state = None
         self.action_space = 100
+        self.done = False
 
     #todo create grid system
     def identify_state(self, obs):
         #get car position
-
         pass
 
     def run_once(self):
         pass
 
-    def step(self):
-        pass
+    def step(self, action):
+        return self.state, self.reward, self.done, 1
 
     def reset(self):
         pass
@@ -150,34 +150,46 @@ discount_rate = 0.99
 skip_start = 90 #skip start of every game
 batch_size = 50
 iteration = 0 #game iterations
+step = 0 #step
 checkpoint_path = "./my_dqn.ckpt"
 done = True
 
 with tf.Session() as sess:
     tf.global_variables_initializer()
-    ###todo implement q learning algorithm
-    if done:
-        obs = env.reset()
-        q_values = online_q_values.eval(feed_dict={X_state: [state]})
-        action = epsilon_greedy(q_values, step)
-        # online dqn plays
-        obs, reward, done, info = env.step(action)
-    if iteration < training_start or iteration % training_interval != 0:
-        continue
-        # only train after warmup period and at regular intervals
-        # sample memories and use the target dqn to produce the target q-value
-    X_state_val, X_action_val, rewards, X_next_state_val, continues = (sample_memories(batch_size))
-    next_q_values = target_q_values.eval(feed_dict={X_state: X_next_state_val})
-    max_next_q_values = np.max(next_q_values, axis=1, keepdims=True)
-    y_val = rewards + continues * discount_rate * max_next_q_values
-    # train the online dqn
-    training_op.run(feed_dict={X_state: X_state_val, X_action: X_action_val, y: y_val})
-    # regularly copy the online dqn to the target dqn
-    if step % copy_steps == 0:
-        print("copied the online dqn to the target dqn")
-        copy_online_to_target.run()
-    # and save regularly
-    if step % save_steps == 0:
-        saver.save(sess, checkpoint_path)
+    while iteration < n_steps:
+        ###todo implement q learning algorithm
+        if done:
+            obs = env.reset()
+            state = obs
+            q_values = online_q_values.eval(feed_dict={X_state: [state]})
+            action = epsilon_greedy(q_values, step)
+            # online dqn plays
+            obs, reward, done, info = env.step(action)
+
+            next_state = obs.reshape(88, 80, 1)
+
+            # lets memorize what just happened
+            replay_memory.append((state, action, reward, next_state, 1.0 - done))
+            state = next_state
+            iteration += 1
+        if iteration < training_start or iteration % training_interval != 0:
+            continue
+            # only train after warmup period and at regular intervals
+            # sample memories and use the target dqn to produce the target q-value
+        X_state_val, X_action_val, rewards, X_next_state_val, continues = (sample_memories(batch_size))
+        next_q_values = target_q_values.eval(feed_dict={X_state: X_next_state_val})
+        max_next_q_values = np.max(next_q_values, axis=1, keepdims=True)
+        y_val = rewards + continues * discount_rate * max_next_q_values
+        # train the online dqn
+        training_op.run(feed_dict={X_state: X_state_val, X_action: X_action_val, y: y_val})
+        # regularly copy the online dqn to the target dqn
+        if step % copy_steps == 0:
+            print("copied the online dqn to the target dqn")
+            copy_online_to_target.run()
+        # and save regularly
+        if step % save_steps == 0:
+            saver.save(sess, checkpoint_path)
+
+        step += 1
 
 
