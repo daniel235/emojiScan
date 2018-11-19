@@ -7,10 +7,11 @@ class Car:
         self.x = 835 / 2
         self.y = 720
         self.destination = None
+        self.boundary = None
 
 
     def createCar(self):
-        self.car = pygame.image.load("./game/images/car.png")
+        self.car = pygame.image.load("../game/images/car.png")
         self.pos = (self.x, self.y)
 
         #resize image

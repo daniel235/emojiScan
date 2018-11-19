@@ -2,7 +2,7 @@ import pygame
 import os
 import sys
 import game.car as c
-
+from PIL import Image
 
 class track:
     def __init__(self):
@@ -12,7 +12,9 @@ class track:
     def drawTrack(self, car=None):
         pygame.init()
         self.screen = pygame.display.set_mode((860, 860))
-        self.car = c.Car(1)
+        if car == None:
+            self.car = c.Car(0)
+
         self.car.createCar()
 
     def update_input(self):
@@ -45,6 +47,10 @@ class track:
 
     def update_screen(self):
         self.screen.fill((0, 100, 30))
+        #x y width height
+        pygame.draw.rect(self.screen, (255, 255, 255), [400, 300, 130, 500])
+        pygame.draw.rect(self.screen, (255, 255, 255), [400, 300, 350, 100])
+        pygame.draw.rect(self.screen, (255, 255, 255), [620, 0, 130, 400])
         self.drawCar()
         pygame.display.flip()
 
@@ -53,7 +59,12 @@ class track:
         self.screen.blit(self.car.car, (self.car.x, self.car.y))
 
     def save_image(self):
-        pass
+        self.count = 0
+        pygame.image.save(self.screen, "../game/images/track" + str(self.count) + ".jpg")
+        pic =  Image.open("../game/images/track" + str(self.count) + ".jpg")
+        pic = list(pic.getdata())
+        return pic
+
 
 
 

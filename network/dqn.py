@@ -2,6 +2,8 @@ import tensorflow as tf
 import numpy as np
 import random
 from collections import deque
+from game.track import *
+from game.car import *
 
 ###todo get dqn to shoot input ####
 
@@ -22,6 +24,10 @@ class Environment:
         self.state = None
         self.action_space = 100
         self.done = False
+        self.track = None
+        self.state = None
+        self.agent = None
+        self.carCt = 0
 
     #todo create grid system
     def identify_state(self, obs):
@@ -32,10 +38,25 @@ class Environment:
         pass
 
     def step(self, action):
+        if self.track.car != None:
+            self.track.car.control(action)
+
         return self.state, self.reward, self.done, 1
 
-    def reset(self):
+    def checkProgress(self, car):
+        #if car is in green no reward
         pass
+        #if car is in white(road) add reward or postpone
+
+    def reset(self):
+        self.agent = Car(self.carCt)
+        self.track = track()
+        self.track.drawTrack()
+        self.track.update_screen()
+        self.state = self.track.save_image()
+        print(self.state)
+        return self.state
+
 
 
 ##create dqn
@@ -75,7 +96,7 @@ def q_network(X_state, name):
 
 
 
-X_state = tf.placeholder(tf.float32, shape=[None, input_height, input_width, input_channels])
+X_state = tf.placeholder(tf.float32, shape=[None, input_height, input_width, input_channels], name="x_state")
 
 
 online_q_values, online_vars = q_network(X_state, name="q_networks/online")
@@ -86,10 +107,10 @@ copy_ops = [target_var.assign(online_vars[var_name])
 
 
 copy_online_to_target = tf.group(*copy_ops)
-X_action = tf.placeholder(tf.int32, shape=[None])
+X_action = tf.placeholder(tf.int32, shape=[None], name="x_action")
 q_value = tf.reduce_sum(target_q_values * tf.one_hot(X_action, n_outputs), axis = 1, keep_dims=True)
 
-y = tf.placeholder(tf.float32, shape=[None, 1])
+y = tf.placeholder(tf.float32, shape=[None, 1], name="y")
 error = tf.abs(y - q_value)
 clipped_error = tf.clip_by_value(error, 0.0, 1.0)
 linear_error = 2 * (error - clipped_error)
@@ -127,6 +148,14 @@ eps_min = 0.1
 eps_max = 1.0
 eps_decay_steps = 20000
 
+
+def preprocess_obs(obs):
+    #shrink image data
+    img = obs[::2, ::2]
+    img = img.mean(axis=2)
+    return img.reshape(88, 80, 1)
+
+
 def epsilon_greedy(q_values, step):
     epsilon = max(eps_min, eps_max - (eps_max-eps_min) * step/eps_decay_steps)
     if np.random.rand() < epsilon:
@@ -160,7 +189,11 @@ with tf.Session() as sess:
         ###todo implement q learning algorithm
         if done:
             obs = env.reset()
-            state = obs
+            env.track.update_input()
+            env.track.update_screen()
+            #preprocess state to pass to q network
+            state = preprocess_obs(obs)
+            # feeding state to q network
             q_values = online_q_values.eval(feed_dict={X_state: [state]})
             action = epsilon_greedy(q_values, step)
             # online dqn plays
