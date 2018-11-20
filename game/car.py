@@ -20,6 +20,7 @@ class Car:
 
     def control(self, direction):
         #up
+        print("in control " )
         if direction == 0:
             self.y -= 10
 

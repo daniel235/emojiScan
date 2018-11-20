@@ -2,16 +2,19 @@ import pygame
 import os
 import sys
 import game.car as c
+import numpy as np
+from skimage import color
 from PIL import Image
 
 class track:
     def __init__(self):
         self.id = None
         self.screen = None
+        self.endPos = (650, 10)
 
     def drawTrack(self, car=None):
         pygame.init()
-        self.screen = pygame.display.set_mode((860, 860))
+        self.screen = pygame.display.set_mode((880, 880))
         if car == None:
             self.car = c.Car(0)
 
@@ -51,6 +54,7 @@ class track:
         pygame.draw.rect(self.screen, (255, 255, 255), [400, 300, 130, 500])
         pygame.draw.rect(self.screen, (255, 255, 255), [400, 300, 350, 100])
         pygame.draw.rect(self.screen, (255, 255, 255), [620, 0, 130, 400])
+        pygame.draw.circle(self.screen, (100, 0, 0), (650, 10), 20)
         self.drawCar()
         pygame.display.flip()
 
@@ -62,7 +66,7 @@ class track:
         self.count = 0
         pygame.image.save(self.screen, "../game/images/track" + str(self.count) + ".jpg")
         pic =  Image.open("../game/images/track" + str(self.count) + ".jpg")
-        pic = list(pic.getdata())
+        pic = np.array(pic.getdata())
         return pic
 
 

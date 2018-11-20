@@ -1,9 +1,11 @@
 import tensorflow as tf
 import numpy as np
 import random
+from skimage import color
 from collections import deque
 from game.track import *
 from game.car import *
+import matplotlib.pyplot as plt
 
 ###todo get dqn to shoot input ####
 
@@ -40,6 +42,13 @@ class Environment:
     def step(self, action):
         if self.track.car != None:
             self.track.car.control(action)
+            self.state = self.track.save_image()
+
+            #if car near end reward
+            if self.track.car.x - self.track.endPos[0] < 30 and self.track.car.y - self.track.endPos[1] < 30:
+                self.reward = 1
+                self.done = True
+
 
         return self.state, self.reward, self.done, 1
 
@@ -54,21 +63,21 @@ class Environment:
         self.track.drawTrack()
         self.track.update_screen()
         self.state = self.track.save_image()
-        print(self.state)
+        #print(self.state)
         return self.state
 
 
 
 ##create dqn
 input_height = 88
-input_width = 80
+input_width = 88
 input_channels = 1
-conv_n_maps = [32,64,64]
+conv_n_maps = [34,68,68]
 conv_kernel_sizes = [(8,8),(4,4),(3,3)]
 conv_strides = [4,2,1]
 conv_paddings = ["SAME"] * 3
 conv_activation = [tf.nn.relu] * 3
-n_hidden_in = 64 * 11 * 10 #conv3 has 64 maps of 11 * 10 each
+n_hidden_in = 68 * 11 * 11 #conv3 has 64 maps of 11 * 10 each
 n_hidden = 512
 hidden_activation = tf.nn.relu
 n_outputs = 4  #4 discrete actions are available
@@ -151,9 +160,20 @@ eps_decay_steps = 20000
 
 def preprocess_obs(obs):
     #shrink image data
-    img = obs[::2, ::2]
+    obs = obs.reshape(880, 880, 3)
+    img = obs[1:880:10, ::10]
+    #img = color.rgb2gray(img)
     img = img.mean(axis=2)
-    return img.reshape(88, 80, 1)
+    img = np.array(img)
+    img = (img - 128)/ 128 - 1
+    print(img)
+
+    #show image
+    plt.imshow(img, interpolation="nearest")
+    #plt.show()
+
+    return img.reshape(88, 88, 1)
+
 
 
 def epsilon_greedy(q_values, step):
@@ -183,9 +203,15 @@ step = 0 #step
 checkpoint_path = "./my_dqn.ckpt"
 done = True
 
+
 with tf.Session() as sess:
-    tf.global_variables_initializer()
+    if os.path.isfile(checkpoint_path + ".index"):
+        saver.restore(sess, checkpoint_path)
+    else:
+        init.run()
+
     while iteration < n_steps:
+        print(iteration)
         ###todo implement q learning algorithm
         if done:
             obs = env.reset()
@@ -199,12 +225,13 @@ with tf.Session() as sess:
             # online dqn plays
             obs, reward, done, info = env.step(action)
 
-            next_state = obs.reshape(88, 80, 1)
+            next_state = preprocess_obs(obs)
 
             # lets memorize what just happened
             replay_memory.append((state, action, reward, next_state, 1.0 - done))
             state = next_state
             iteration += 1
+
         if iteration < training_start or iteration % training_interval != 0:
             continue
             # only train after warmup period and at regular intervals

@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0ade4954-2977-4305-8fae-08342ded68dd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/game/controller.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/game/car.py" beforeDir="false" afterPath="$PROJECT_DIR$/game/car.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/images/track0.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/game/images/track0.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/game/track.py" beforeDir="false" afterPath="$PROJECT_DIR$/game/track.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/network/dqn.py" beforeDir="false" afterPath="$PROJECT_DIR$/network/dqn.py" afterDir="false" />
     </list>
@@ -18,48 +18,50 @@
     <session id="1556773276">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="42" />
+          <entry key="project.closed" value="46" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.1" value="6" />
           <entry key="project.open.time.10" value="4" />
-          <entry key="project.open.time.11" value="1" />
+          <entry key="project.open.time.11" value="2" />
           <entry key="project.open.time.12" value="1" />
           <entry key="project.open.time.13" value="1" />
+          <entry key="project.open.time.14" value="1" />
           <entry key="project.open.time.17" value="1" />
           <entry key="project.open.time.19" value="1" />
           <entry key="project.open.time.31" value="1" />
           <entry key="project.open.time.5" value="1" />
           <entry key="project.open.time.6" value="6" />
-          <entry key="project.open.time.7" value="7" />
+          <entry key="project.open.time.7" value="9" />
           <entry key="project.open.time.8" value="9" />
           <entry key="project.open.time.9" value="4" />
-          <entry key="project.opened" value="45" />
+          <entry key="project.opened" value="49" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="jpg" value="36" />
-          <entry key="py" value="33" />
+          <entry key="jpg" value="37" />
+          <entry key="png" value="1" />
+          <entry key="py" value="38" />
           <entry key="pyi" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Image" value="36" />
-          <entry key="Python" value="33" />
+          <entry key="Image" value="38" />
+          <entry key="Python" value="38" />
           <entry key="PythonStub" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="8" />
-          <entry key="py" value="14873" />
+          <entry key="py" value="16072" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="8" />
-          <entry key="Python" value="14873" />
+          <entry key="Python" value="16072" />
         </counts>
       </usages-collector>
     </session>
@@ -68,30 +70,39 @@
     <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/network/dqn.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="314">
-                  <caret line="205" column="30" lean-forward="true" selection-start-line="205" selection-start-column="30" selection-end-line="205" selection-end-column="30" />
+                <state relative-caret-position="254">
+                  <caret line="181" column="43" lean-forward="true" selection-start-line="181" selection-start-column="43" selection-end-line="181" selection-end-column="43" />
                   <folding>
                     <element signature="e#0#23#0" expanded="true" />
-                    <marker date="1542591074483" expanded="true" signature="433:438" ph="..." />
-                    <marker date="1542591074483" expanded="true" signature="731:740" ph="..." />
-                    <marker date="1542591074483" expanded="true" signature="969:1118" ph="..." />
-                    <marker date="1542591074483" expanded="true" signature="1004:1013" ph="..." />
-                    <marker date="1542591074483" expanded="true" signature="1004:1118" ph="..." />
-                    <marker date="1542591074483" expanded="true" signature="4550:4555" ph="..." />
-                    <marker date="1542591074483" expanded="true" signature="4550:4661" ph="..." />
+                    <marker date="1542742536843" expanded="true" signature="491:496" ph="..." />
+                    <marker date="1542742536843" expanded="true" signature="789:798" ph="..." />
+                    <marker date="1542742536843" expanded="true" signature="1289:1438" ph="..." />
+                    <marker date="1542742536843" expanded="true" signature="1324:1333" ph="..." />
+                    <marker date="1542742536843" expanded="true" signature="1324:1438" ph="..." />
+                    <marker date="1542742536843" expanded="true" signature="4871:4876" ph="..." />
+                    <marker date="1542742536843" expanded="true" signature="4871:5204" ph="..." />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/game/car.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="702">
+                  <caret line="39" column="26" lean-forward="true" selection-start-line="39" selection-start-column="26" selection-end-line="39" selection-end-column="26" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/game/track.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="838">
-                  <caret line="65" column="18" selection-start-line="65" selection-start-column="18" selection-end-line="65" selection-end-column="18" />
+                <state relative-caret-position="288">
+                  <caret line="23" column="27" lean-forward="true" selection-start-line="23" selection-start-column="27" selection-end-line="23" selection-end-column="27" />
                   <folding>
                     <element signature="e#0#13#0" expanded="true" />
                   </folding>
@@ -102,26 +113,14 @@
         </leaf>
       </split-first>
       <split-second>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="false">
+        <leaf>
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/game/track.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="818">
-                  <caret line="55" lean-forward="true" selection-start-line="55" selection-end-line="55" />
+                <state relative-caret-position="360">
+                  <caret line="32" column="27" lean-forward="true" selection-start-line="32" selection-start-column="27" selection-end-line="32" selection-end-column="27" />
                   <folding>
                     <element signature="e#0#13#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/game/car.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="486">
-                  <caret line="27" column="24" lean-forward="true" selection-start-line="27" selection-start-column="24" selection-end-line="27" selection-end-column="24" />
-                  <folding>
-                    <marker date="1542594412208" expanded="true" signature="25:30" ph="..." />
                   </folding>
                 </state>
               </provider>
@@ -154,10 +153,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-11" />
-    <option name="y" value="-11" />
-    <option name="width" value="2279" />
-    <option name="height" value="1526" />
+    <option name="x" value="-12" />
+    <option name="width" value="1149" />
+    <option name="height" value="1455" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -183,6 +181,11 @@
               <item name="mlClass" type="462c0819:PsiDirectoryNode" />
               <item name="game" type="462c0819:PsiDirectoryNode" />
               <item name="images" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mlClass" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mlClass" type="462c0819:PsiDirectoryNode" />
+              <item name="network" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -352,13 +355,13 @@
     <frame x="-7" y="-7" width="1519" height="977" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.1417004" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1417004" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32938388" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49932525" weight="0.32819906" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49932525" weight="0.3601896" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3992891" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -499,39 +502,63 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/game/track.py">
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/python-skeletons/numpy/core/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="838">
-          <caret line="65" column="18" selection-start-line="65" selection-start-column="18" selection-end-line="65" selection-end-column="18" />
+        <state relative-caret-position="171">
+          <caret line="346" lean-forward="true" selection-start-line="346" selection-end-line="346" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharmCE2018.2/system/python_stubs/-1423887927/numpy/core/multiarray.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="477">
+          <caret line="4232" column="51" lean-forward="true" selection-start-line="4232" selection-start-column="51" selection-end-line="4232" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/conda/conda/envs/mlClass/Lib/site-packages/numpy/core/_methods.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="864">
+          <caret line="56" selection-start-line="56" selection-end-line="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/network/my.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/game/images/track0.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/network/dqn.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="254">
+          <caret line="181" column="43" lean-forward="true" selection-start-line="181" selection-start-column="43" selection-end-line="181" selection-end-column="43" />
           <folding>
-            <element signature="e#0#13#0" expanded="true" />
+            <element signature="e#0#23#0" expanded="true" />
+            <marker date="1542742536843" expanded="true" signature="491:496" ph="..." />
+            <marker date="1542742536843" expanded="true" signature="789:798" ph="..." />
+            <marker date="1542742536843" expanded="true" signature="1289:1438" ph="..." />
+            <marker date="1542742536843" expanded="true" signature="1324:1333" ph="..." />
+            <marker date="1542742536843" expanded="true" signature="1324:1438" ph="..." />
+            <marker date="1542742536843" expanded="true" signature="4871:4876" ph="..." />
+            <marker date="1542742536843" expanded="true" signature="4871:5204" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/game/car.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="27" column="24" lean-forward="true" selection-start-line="27" selection-start-column="24" selection-end-line="27" selection-end-column="24" />
-          <folding>
-            <marker date="1542594412208" expanded="true" signature="25:30" ph="..." />
-          </folding>
+        <state relative-caret-position="702">
+          <caret line="39" column="26" lean-forward="true" selection-start-line="39" selection-start-column="26" selection-end-line="39" selection-end-column="26" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/network/dqn.py">
+    <entry file="file://$PROJECT_DIR$/game/track.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
-          <caret line="205" column="30" lean-forward="true" selection-start-line="205" selection-start-column="30" selection-end-line="205" selection-end-column="30" />
+        <state relative-caret-position="288">
+          <caret line="23" column="27" lean-forward="true" selection-start-line="23" selection-start-column="27" selection-end-line="23" selection-end-column="27" />
           <folding>
-            <element signature="e#0#23#0" expanded="true" />
-            <marker date="1542591074483" expanded="true" signature="433:438" ph="..." />
-            <marker date="1542591074483" expanded="true" signature="731:740" ph="..." />
-            <marker date="1542591074483" expanded="true" signature="969:1118" ph="..." />
-            <marker date="1542591074483" expanded="true" signature="1004:1013" ph="..." />
-            <marker date="1542591074483" expanded="true" signature="1004:1118" ph="..." />
-            <marker date="1542591074483" expanded="true" signature="4550:4555" ph="..." />
-            <marker date="1542591074483" expanded="true" signature="4550:4661" ph="..." />
+            <element signature="e#0#13#0" expanded="true" />
           </folding>
         </state>
       </provider>
