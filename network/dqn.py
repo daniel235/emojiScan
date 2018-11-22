@@ -41,6 +41,7 @@ class Environment:
 
     def step(self, action):
         if self.track.car != None:
+            print("action " + str(action))
             self.track.car.control(action)
             self.state = self.track.save_image()
 
@@ -48,6 +49,8 @@ class Environment:
             if self.track.car.x - self.track.endPos[0] < 30 and self.track.car.y - self.track.endPos[1] < 30:
                 self.reward = 1
                 self.done = True
+
+
 
 
         return self.state, self.reward, self.done, 1
@@ -63,6 +66,7 @@ class Environment:
         self.track.drawTrack()
         self.track.update_screen()
         self.state = self.track.save_image()
+        print(self.state)
         #print(self.state)
         return self.state
 
@@ -217,20 +221,28 @@ with tf.Session() as sess:
             obs = env.reset()
             env.track.update_input()
             env.track.update_screen()
-            #preprocess state to pass to q network
+            # preprocess state to pass to q network
             state = preprocess_obs(obs)
             # feeding state to q network
-            q_values = online_q_values.eval(feed_dict={X_state: [state]})
-            action = epsilon_greedy(q_values, step)
-            # online dqn plays
-            obs, reward, done, info = env.step(action)
-
-            next_state = preprocess_obs(obs)
-
-            # lets memorize what just happened
-            replay_memory.append((state, action, reward, next_state, 1.0 - done))
-            state = next_state
             iteration += 1
+
+        env.track.update_input()
+        env.track.update_screen()
+        step = global_step.eval()
+
+        q_values = online_q_values.eval(feed_dict={X_state: [state]})
+
+        action = epsilon_greedy(q_values, step)
+
+        # online dqn plays
+        obs, reward, done, info = env.step(action)
+        print("stepped")
+        next_state = preprocess_obs(obs)
+
+        # lets memorize what just happened
+        replay_memory.append((state, action, reward, next_state, 1.0 - done))
+        state = next_state
+
 
         if iteration < training_start or iteration % training_interval != 0:
             continue
