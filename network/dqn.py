@@ -3,8 +3,9 @@ import numpy as np
 import random
 from skimage import color
 from collections import deque
-from game.track import *
-from game.car import *
+import game.track
+import game.car
+
 import matplotlib.pyplot as plt
 
 ###todo get dqn to shoot input ####
