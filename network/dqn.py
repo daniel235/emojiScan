@@ -3,7 +3,10 @@ import numpy as np
 import random
 from skimage import color
 from collections import deque
-import game.track
+from game.track import track
+from game.car import Car
+
+
 import game.car
 
 import matplotlib.pyplot as plt
