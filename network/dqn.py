@@ -34,7 +34,9 @@ class Environment:
     #todo create grid system
     def identify_state(self, obs):
         #get car position
-        pass
+        #pos is top left corner pos  -> so any position below it along height is border add width that is boundary for right side
+        pos = self.track.car.pos
+
 
     def run_once(self):
         pass

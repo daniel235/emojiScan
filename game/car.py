@@ -8,7 +8,7 @@ class Car:
         self.y = 720
         self.destination = None
         self.boundary = None
-
+        self.pos = None
 
     def createCar(self):
         self.car = pygame.image.load("../game/images/car.png")
@@ -20,7 +20,7 @@ class Car:
 
     def control(self, direction):
         #up
-        print("in control " )
+        print("in control ")
         if direction == 0:
             self.y -= 10
 
