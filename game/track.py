@@ -65,7 +65,7 @@ class track:
     def save_image(self):
         self.count = 0
         pygame.image.save(self.screen, "../game/images/track" + str(self.count) + ".jpg")
-        pic =  Image.open("../game/images/track" + str(self.count) + ".jpg")
+        pic = Image.open("../game/images/track" + str(self.count) + ".jpg")
         pic = np.array(pic.getdata())
         return pic
 

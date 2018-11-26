@@ -40,6 +40,8 @@ class Environment:
     #todo create grid system
     def identify_state(self, obs):
         self.box = []
+        st = obs.reshape(880, 880, 3)
+        green = 0
         #get car position
         #pos is top left corner pos  -> so any position below it along height is border add width that is boundary for right side
         pos = self.track.car.pos
@@ -47,6 +49,8 @@ class Environment:
         height = self.track.car.boundary["y"]
         #starting point
         start = pos[0]
+
+
         for i in range(height):
             #left wall
             self.box.append(("l", pos[0], pos[1] + i))
@@ -61,8 +65,12 @@ class Environment:
 
         #count greens
         for i in range(len(self.box)):
-            if(self.box[i][0] ):
-                pass
+            #green
+            print("val ", st[int(self.box[i][1])][int(self.box[i][2])][1])
+            if st[int(self.box[i][1])][int(self.box[i][2])][0] != 255:
+                print("add green ", i)
+                green += 1
+
         return green
 
     def run_once(self):
@@ -70,7 +78,6 @@ class Environment:
 
     def step(self, action):
         if self.track.car != None:
-            print("action " + str(action))
             self.track.car.control(action)
             self.state = self.track.save_image()
             penalty = self.identify_state(self.state)
@@ -79,9 +86,9 @@ class Environment:
                 self.reward = 1
                 self.done = True
 
+            self.reward = (1 / penalty) / 5
 
-
-
+        print("reward ", self.reward)
         return self.state, self.reward, self.done, 1
 
     def checkProgress(self, car):
@@ -199,7 +206,6 @@ def preprocess_obs(obs):
     img = img.mean(axis=2)
     img = np.array(img)
     img = (img - 128)/ 128 - 1
-    print(img)
 
     #show image
     plt.imshow(img, interpolation="nearest")
@@ -265,7 +271,7 @@ with tf.Session() as sess:
 
         # online dqn plays
         obs, reward, done, info = env.step(action)
-        print("stepped")
+
         next_state = preprocess_obs(obs)
 
         # lets memorize what just happened

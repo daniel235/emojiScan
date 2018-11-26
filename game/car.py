@@ -4,7 +4,7 @@ class Car:
     def __init__(self, id):
         self.id = id
         self.car = None
-        self.x = 835 / 2
+        self.x = 834 / 2
         self.y = 720
         self.destination = None
         self.boundary = {"x": 80, "y": 130}
@@ -23,7 +23,6 @@ class Car:
         print("in control ")
         if direction == 0:
             self.y -= 10
-
         #right
         elif direction == 1:
             self.x += 10
@@ -35,6 +34,8 @@ class Car:
         #left
         elif direction == 3:
             self.x -= 10
+
+        self.pos = (self.x, self.y)
 
     #network input
     def getNetInput(self):
