@@ -7,7 +7,7 @@ class Car:
         self.x = 835 / 2
         self.y = 720
         self.destination = None
-        self.boundary = None
+        self.boundary = {"x": 80, "y": 130}
         self.pos = None
 
     def createCar(self):

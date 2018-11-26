@@ -1,5 +1,6 @@
 import tensorflow as tf
 import numpy as np
+import os
 import random
 from skimage import color
 from collections import deque
@@ -33,14 +34,36 @@ class Environment:
         self.track = None
         self.state = None
         self.agent = None
+        self.box = []
         self.carCt = 0
 
     #todo create grid system
     def identify_state(self, obs):
+        self.box = []
         #get car position
         #pos is top left corner pos  -> so any position below it along height is border add width that is boundary for right side
         pos = self.track.car.pos
+        width = self.track.car.boundary["x"]
+        height = self.track.car.boundary["y"]
+        #starting point
+        start = pos[0]
+        for i in range(height):
+            #left wall
+            self.box.append(("l", pos[0], pos[1] + i))
+            #right wall
+            self.box.append(("r", pos[0] + width, pos[1] + i))
 
+        for j in range(width):
+            #top
+            self.box.append(("t", pos[0] + j, pos[1]))
+            #bottom
+            self.box.append(("b", pos[0] + j, pos[1] + height))
+
+        #count greens
+        for i in range(len(self.box)):
+            if(self.box[i][0] ):
+                pass
+        return green
 
     def run_once(self):
         pass
@@ -50,7 +73,7 @@ class Environment:
             print("action " + str(action))
             self.track.car.control(action)
             self.state = self.track.save_image()
-
+            penalty = self.identify_state(self.state)
             #if car near end reward
             if self.track.car.x - self.track.endPos[0] < 30 and self.track.car.y - self.track.endPos[1] < 30:
                 self.reward = 1
