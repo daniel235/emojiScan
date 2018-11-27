@@ -4,8 +4,8 @@ import os
 import random
 from skimage import color
 from collections import deque
-from game.track import track
-from game.car import Car
+from track import track
+from car import Car
 
 
 import game.car
