@@ -50,6 +50,7 @@ class Environment:
         width = self.track.car.boundary["x"]
         height = self.track.car.boundary["y"]
 
+        #making sure car doesn't go out of bounds
         if pos[0] < 15 or pos[0] > 785 or pos[1] < 15 or pos[1] > 735:
             return -3
 
