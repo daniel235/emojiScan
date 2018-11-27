@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0ade4954-2977-4305-8fae-08342ded68dd" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/car.py" beforeDir="false" afterPath="$PROJECT_DIR$/game/car.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/car.PNG" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/game/images/track0.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/game/images/track0.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/track.py" beforeDir="false" afterPath="$PROJECT_DIR$/game/track.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/network/dqn.py" beforeDir="false" afterPath="$PROJECT_DIR$/network/dqn.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -161,7 +158,20 @@
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes />
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="mlClass" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mlClass" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -323,14 +333,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1519" height="977" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.27335164" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27327934" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32938388" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49932525" weight="0.3578199" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49932525" visible="true" weight="0.3578199" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3992891" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
