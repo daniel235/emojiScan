@@ -41,35 +41,55 @@ class Environment:
     def identify_state(self, obs):
         self.box = []
         st = obs.reshape(880, 880, 3)
+        '''for i in range(880):
+            for j in range(880):
+                if st[i][j][0] == 255:
+                    print("(", i, j, ")")'''
+
         green = 0
+        white = 0
         #get car position
         #pos is top left corner pos  -> so any position below it along height is border add width that is boundary for right side
         pos = self.track.car.pos
         width = self.track.car.boundary["x"]
         height = self.track.car.boundary["y"]
-        #starting point
-        start = pos[0]
 
 
         for i in range(height):
             #left wall
-            self.box.append(("l", pos[0], pos[1] + i))
+            self.box.append(("l", pos[0] - 5, pos[1] + i))
             #right wall
-            self.box.append(("r", pos[0] + width, pos[1] + i))
+            self.box.append(("r", pos[0] + width + 5, pos[1] + i))
+
+            if i == 5:
+                for k in range(5):
+                    print(self.box[k])
 
         for j in range(width):
-            #top
-            self.box.append(("t", pos[0] + j, pos[1]))
-            #bottom
-            self.box.append(("b", pos[0] + j, pos[1] + height))
+            #top -> add ten to top
+            self.box.append(("t", pos[0] + j, pos[1] - 5))
+            #bottom -> add tne to bottom
+            self.box.append(("b", pos[0] + j, pos[1] + height + 5))
 
-        #count greens
+        #count greens and whites come up with ratio
         for i in range(len(self.box)):
             #green
-            print("val ", st[int(self.box[i][1])][int(self.box[i][2])][1])
-            if st[int(self.box[i][1])][int(self.box[i][2])][0] != 255:
-                print("add green ", i)
+
+            val = st[int(self.box[i][2])][int(self.box[i][1])][0]
+            if i == 1:
+                print("val ->", val)
+                print("real val -> ", st[417, 720])
+
+            if val != 255:
                 green += 1
+            else:
+                white += 1
+
+
+
+
+        ratio = white / max(green, 1)
+        print("ratio ", ratio, "green ", green, "white ", white)
 
         return green
 
@@ -86,7 +106,7 @@ class Environment:
                 self.reward = 1
                 self.done = True
 
-            self.reward = (1 / penalty) / 5
+            self.reward = (1 / max(penalty, 1)) / 5
 
         print("reward ", self.reward)
         return self.state, self.reward, self.done, 1
@@ -102,6 +122,7 @@ class Environment:
         self.track.drawTrack()
         self.track.update_screen()
         self.state = self.track.save_image()
+        self.done = False
         print(self.state)
         #print(self.state)
         return self.state

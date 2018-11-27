@@ -4,7 +4,7 @@ class Car:
     def __init__(self, id):
         self.id = id
         self.car = None
-        self.x = 834 / 2
+        self.x = 417
         self.y = 720
         self.destination = None
         self.boundary = {"x": 80, "y": 130}
@@ -40,3 +40,5 @@ class Car:
     #network input
     def getNetInput(self):
         pass
+
+
