@@ -8,7 +8,7 @@ from track import track
 from car import Car
 
 
-import game.car
+
 
 import matplotlib.pyplot as plt
 
