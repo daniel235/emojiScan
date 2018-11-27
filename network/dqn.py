@@ -41,10 +41,6 @@ class Environment:
     def identify_state(self, obs):
         self.box = []
         st = obs.reshape(880, 880, 3)
-        '''for i in range(880):
-            for j in range(880):
-                if st[i][j][0] == 255:
-                    print("(", i, j, ")")'''
 
         green = 0
         white = 0
@@ -54,6 +50,8 @@ class Environment:
         width = self.track.car.boundary["x"]
         height = self.track.car.boundary["y"]
 
+        if pos[0] < 15 or pos[0] > 785 or pos[1] < 15 or pos[1] > 735:
+            return -3
 
         for i in range(height):
             #left wall
@@ -73,19 +71,11 @@ class Environment:
 
         #count greens and whites come up with ratio
         for i in range(len(self.box)):
-            #green
-
             val = st[int(self.box[i][2])][int(self.box[i][1])][0]
-            if i == 1:
-                print("val ->", val)
-                print("real val -> ", st[417, 720])
-
             if val != 255:
                 green += 1
             else:
                 white += 1
-
-
 
 
         ratio = white / max(green, 1)
@@ -105,16 +95,14 @@ class Environment:
             if self.track.car.x - self.track.endPos[0] < 30 and self.track.car.y - self.track.endPos[1] < 30:
                 self.reward = 1
                 self.done = True
-
-            self.reward = (1 / max(penalty, 1)) / 5
+            if penalty != -3:
+                self.reward = (1 / max(penalty, 1)) / 5
+            else:
+                self.reward = 0
+                self.done = True
 
         print("reward ", self.reward)
         return self.state, self.reward, self.done, 1
-
-    def checkProgress(self, car):
-        #if car is in green no reward
-        pass
-        #if car is in white(road) add reward or postpone
 
     def reset(self):
         self.agent = Car(self.carCt)

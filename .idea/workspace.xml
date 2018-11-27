@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0ade4954-2977-4305-8fae-08342ded68dd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/car.PNG" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/game/images/track0.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/game/images/track0.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/network/dqn.py" beforeDir="false" afterPath="$PROJECT_DIR$/network/dqn.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -52,13 +52,13 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="8" />
-          <entry key="py" value="18910" />
+          <entry key="py" value="19106" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="8" />
-          <entry key="Python" value="18910" />
+          <entry key="Python" value="19106" />
         </counts>
       </usages-collector>
     </session>
@@ -68,17 +68,15 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/network/dqn.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="483">
-              <caret line="90" column="37" lean-forward="true" selection-start-line="90" selection-start-column="37" selection-end-line="90" selection-end-column="37" />
+            <state relative-caret-position="325">
+              <caret line="52" column="37" selection-start-line="52" selection-start-column="37" selection-end-line="52" selection-end-column="37" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
-                <marker date="1543344086048" expanded="true" signature="526:531" ph="..." />
-                <marker date="1543344086048" expanded="true" signature="1092:1101" ph="..." />
-                <marker date="1543344086048" expanded="true" signature="3035:3184" ph="..." />
-                <marker date="1543344086048" expanded="true" signature="3070:3079" ph="..." />
-                <marker date="1543344086048" expanded="true" signature="3070:3184" ph="..." />
-                <marker date="1543344086048" expanded="true" signature="6669:6674" ph="..." />
-                <marker date="1543344086048" expanded="true" signature="6669:6987" ph="..." />
+                <marker date="1543346829910" expanded="true" signature="526:531" ph="..." />
+                <marker date="1543346829910" expanded="true" signature="943:952" ph="..." />
+                <marker date="1543346829910" expanded="true" signature="2960:2966" ph="..." />
+                <marker date="1543346829910" expanded="true" signature="6451:6456" ph="..." />
+                <marker date="1543346829910" expanded="true" signature="6451:6769" ph="..." />
               </folding>
             </state>
           </provider>
@@ -114,7 +112,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/game/track.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
+            <state relative-caret-position="1173">
               <caret line="57" column="22" lean-forward="true" selection-start-line="57" selection-start-column="22" selection-end-line="57" selection-end-column="22" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
@@ -178,6 +176,9 @@
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\dadun\PycharmProjects\mlClass" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\dadun\PycharmProjects\mlClass\game\images" />
       <recent name="C:\Users\dadun\PycharmProjects\mlClass\game" />
@@ -333,13 +334,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1519" height="977" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27327934" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1680162" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32938388" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49932525" visible="true" weight="0.3578199" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49932525" visible="true" weight="0.3578199" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3992891" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -492,7 +494,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/game/track.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
+        <state relative-caret-position="1173">
           <caret line="57" column="22" lean-forward="true" selection-start-line="57" selection-start-column="22" selection-end-line="57" selection-end-column="22" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
@@ -509,17 +511,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/network/dqn.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="90" column="37" lean-forward="true" selection-start-line="90" selection-start-column="37" selection-end-line="90" selection-end-column="37" />
+        <state relative-caret-position="325">
+          <caret line="52" column="37" selection-start-line="52" selection-start-column="37" selection-end-line="52" selection-end-column="37" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
-            <marker date="1543344086048" expanded="true" signature="526:531" ph="..." />
-            <marker date="1543344086048" expanded="true" signature="1092:1101" ph="..." />
-            <marker date="1543344086048" expanded="true" signature="3035:3184" ph="..." />
-            <marker date="1543344086048" expanded="true" signature="3070:3079" ph="..." />
-            <marker date="1543344086048" expanded="true" signature="3070:3184" ph="..." />
-            <marker date="1543344086048" expanded="true" signature="6669:6674" ph="..." />
-            <marker date="1543344086048" expanded="true" signature="6669:6987" ph="..." />
+            <marker date="1543346829910" expanded="true" signature="526:531" ph="..." />
+            <marker date="1543346829910" expanded="true" signature="943:952" ph="..." />
+            <marker date="1543346829910" expanded="true" signature="2960:2966" ph="..." />
+            <marker date="1543346829910" expanded="true" signature="6451:6456" ph="..." />
+            <marker date="1543346829910" expanded="true" signature="6451:6769" ph="..." />
           </folding>
         </state>
       </provider>
