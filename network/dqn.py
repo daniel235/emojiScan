@@ -274,9 +274,12 @@ with tf.Session() as sess:
             state = preprocess_obs(obs)
             # feeding state to q network
             iteration += 1
-
-        env.track.update_input()
-        env.track.update_screen()
+        if env.configuration != "vm":
+            env.track.update_input()
+            env.track.update_screen()
+        else:
+            env.track.update_input(True)
+            env.track.update_screen(True)
         step = global_step.eval()
 
         q_values = online_q_values.eval(feed_dict={X_state: [state]})

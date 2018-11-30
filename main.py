@@ -9,8 +9,8 @@ display = t.track()
 display.drawTrack()
 
 while True:
-    display.update_screen()
-    display.update_input()
+    display.update_screen(True)
+    display.update_input(True)
 
 
 
