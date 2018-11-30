@@ -20,6 +20,14 @@ class track:
         try:
             self.screen = pygame.display.set_mode((880, 880))
         except pygame.error as message:
+            #create green array
+            self.screen = []
+            for i in range(880):
+                for j in range(880):
+                    self.screen.append([0, 100, 30])
+
+            self.screen = np.reshape(self.screen, [880, 880, 3])
+            self.screen = pygame.pixelcopy.array_to_surface(self.screen)
             return 1
 
         if car == None:
@@ -72,10 +80,15 @@ class track:
         self.screen.blit(self.car.car, (self.car.x, self.car.y))
 
     def save_image(self, vm=False):
-        self.count = 0
-        pygame.image.save(self.screen, "../game/images/track" + str(self.count) + ".jpg")
-        pic = Image.open("../game/images/track" + str(self.count) + ".jpg")
-        pic = np.array(pic.getdata())
+        if not vm:
+            self.count = 0
+            pygame.image.save(self.screen, "../game/images/track" + str(self.count) + ".jpg")
+            pic = Image.open("../game/images/track" + str(self.count) + ".jpg")
+            pic = np.array(pic.getdata())
+
+        else:
+            pic = np.array(self.screen)
+
         return pic
 
 

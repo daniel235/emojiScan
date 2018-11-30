@@ -11,9 +11,6 @@ from collections import deque
 import track
 import car
 
-
-
-
 import matplotlib.pyplot as plt
 
 ###todo get dqn to shoot input ####
@@ -54,7 +51,6 @@ class Environment:
         pos = self.track.car.pos
         width = self.track.car.boundary["x"]
         height = self.track.car.boundary["y"]
-
         #making sure car doesn't go out of bounds
         if pos[0] < 15 or pos[0] > 785 or pos[1] < 15 or pos[1] > 735:
             return -3
