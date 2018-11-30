@@ -21,8 +21,7 @@ class track:
             self.screen = pygame.display.set_mode((880, 880))
         except pygame.error as message:
             #create green array
-            x = []
-            self.screen = np.reshape(x, [880, 880, 3])
+            self.screen = np.zeros((880, 880, 3))
             for i in range(880):
                 for j in range(880):
                     self.screen[i][j] = [0, 100, 30]
