@@ -112,7 +112,7 @@ class Environment:
 
     def reset(self):
         self.agent = car.Car(self.carCt)
-        self.track = track()
+        self.track = track.track()
         self.track.drawTrack()
         self.track.update_screen()
         self.state = self.track.save_image()
