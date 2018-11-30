@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0ade4954-2977-4305-8fae-08342ded68dd" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/dqn.py" beforeDir="false" afterPath="$PROJECT_DIR$/network/dqn.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/images/track0.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/game/images/track0.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/game/track.py" beforeDir="false" afterPath="$PROJECT_DIR$/game/track.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/network/dqn.py" beforeDir="false" afterPath="$PROJECT_DIR$/network/dqn.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -54,31 +52,31 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="8" />
-          <entry key="py" value="19291" />
+          <entry key="py" value="19428" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="8" />
-          <entry key="Python" value="19291" />
+          <entry key="Python" value="19428" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/network/dqn.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2001">
-              <caret line="99" column="31" selection-start-line="99" selection-start-column="31" selection-end-line="99" selection-end-column="31" />
+            <state relative-caret-position="253">
+              <caret line="11" column="10" lean-forward="true" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
-                <marker date="1543363744267" expanded="true" signature="511:516" ph="..." />
-                <marker date="1543363744267" expanded="true" signature="928:937" ph="..." />
-                <marker date="1543363744267" expanded="true" signature="3027:3033" ph="..." />
-                <marker date="1543363744267" expanded="true" signature="6518:6523" ph="..." />
-                <marker date="1543363744267" expanded="true" signature="6518:6836" ph="..." />
+                <marker date="1543548032591" expanded="true" signature="563:568" ph="..." />
+                <marker date="1543548032591" expanded="true" signature="980:989" ph="..." />
+                <marker date="1543548032591" expanded="true" signature="3079:3085" ph="..." />
+                <marker date="1543548032591" expanded="true" signature="6570:6575" ph="..." />
+                <marker date="1543548032591" expanded="true" signature="6570:6888" ph="..." />
               </folding>
             </state>
           </provider>
@@ -111,14 +109,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/game/track.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="92">
-              <caret line="31" column="78" lean-forward="true" selection-start-line="31" selection-start-column="78" selection-end-line="31" selection-end-column="78" />
-              <folding>
-                <element signature="e#0#13#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="115">
+              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
             </state>
           </provider>
         </entry>
@@ -344,7 +339,7 @@
     <frame x="-7" y="-7" width="1519" height="977" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14979757" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14979757" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -486,28 +481,6 @@
     <entry file="file://$PROJECT_DIR$/game/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/network/dqn.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2001">
-          <caret line="99" column="31" selection-start-line="99" selection-start-column="31" selection-end-line="99" selection-end-column="31" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-            <marker date="1543363744267" expanded="true" signature="511:516" ph="..." />
-            <marker date="1543363744267" expanded="true" signature="928:937" ph="..." />
-            <marker date="1543363744267" expanded="true" signature="3027:3033" ph="..." />
-            <marker date="1543363744267" expanded="true" signature="6518:6523" ph="..." />
-            <marker date="1543363744267" expanded="true" signature="6518:6836" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="230">
@@ -524,10 +497,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/game/track.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="31" column="78" lean-forward="true" selection-start-line="31" selection-start-column="78" selection-end-line="31" selection-end-column="78" />
+        <state relative-caret-position="115">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/network/dqn.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="11" column="10" lean-forward="true" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
           <folding>
-            <element signature="e#0#13#0" expanded="true" />
+            <element signature="e#0#23#0" expanded="true" />
+            <marker date="1543548032591" expanded="true" signature="563:568" ph="..." />
+            <marker date="1543548032591" expanded="true" signature="980:989" ph="..." />
+            <marker date="1543548032591" expanded="true" signature="3079:3085" ph="..." />
+            <marker date="1543548032591" expanded="true" signature="6570:6575" ph="..." />
+            <marker date="1543548032591" expanded="true" signature="6570:6888" ph="..." />
           </folding>
         </state>
       </provider>

@@ -1,7 +1,10 @@
 import pygame
 import os
 import sys
-import game.car as c
+
+#add file
+
+import car as c
 import numpy as np
 from skimage import color
 from PIL import Image

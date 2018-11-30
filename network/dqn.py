@@ -1,11 +1,15 @@
 import tensorflow as tf
 import numpy as np
 import os
+import sys
+
+sys.path.append("../game/car.py")
+sys.path.insert("../game/track.py")
 import random
 from skimage import color
 from collections import deque
-from game.track import track
-from game.car import Car
+import track
+import Car
 
 
 
