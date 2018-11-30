@@ -118,8 +118,6 @@ class Environment:
             self.state = self.track.save_image(True)
 
         self.done = False
-        print(self.state)
-        #print(self.state)
         return self.state
 
 
