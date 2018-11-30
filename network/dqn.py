@@ -40,6 +40,7 @@ class Environment:
         self.agent = None
         self.box = []
         self.carCt = 0
+        self.configuration = "local"
 
     #todo create grid system
     def identify_state(self, obs):
@@ -88,12 +89,9 @@ class Environment:
 
         return green
 
-    def run_once(self):
-        pass
-
     def step(self, action):
-        if self.track.car != None:
-            self.track.car.control(action)
+        self.track.car.control(action)
+        if self.track.car != None and self.configuration != "vm":
             self.state = self.track.save_image()
             penalty = self.identify_state(self.state)
             #if car near end reward
@@ -107,15 +105,22 @@ class Environment:
                 self.reward = 0
                 self.done = True
 
+        else:
+            self.state = self.track.save_image(True)
+
         print("reward ", self.reward)
         return self.state, self.reward, self.done, 1
 
     def reset(self):
         self.agent = car.Car(self.carCt)
         self.track = track.track()
-        self.track.drawTrack()
-        self.track.update_screen()
-        self.state = self.track.save_image()
+        if(self.track.drawTrack() == 0):
+            self.track.update_screen()
+            self.state = self.track.save_image()
+        else:
+            self.configuration = "vm"
+            self.state = self.track.save_image(True)
+
         self.done = False
         print(self.state)
         #print(self.state)

@@ -17,11 +17,17 @@ class track:
 
     def drawTrack(self, car=None):
         pygame.init()
-        self.screen = pygame.display.set_mode((880, 880))
+        try:
+            self.screen = pygame.display.set_mode((880, 880))
+        except pygame.error as message:
+            return 1
+
         if car == None:
             self.car = c.Car(0)
 
         self.car.createCar()
+
+        return 0
 
     def update_input(self):
         pygame.event.pump()
@@ -65,7 +71,7 @@ class track:
     def drawCar(self):
         self.screen.blit(self.car.car, (self.car.x, self.car.y))
 
-    def save_image(self):
+    def save_image(self, vm=False):
         self.count = 0
         pygame.image.save(self.screen, "../game/images/track" + str(self.count) + ".jpg")
         pic = Image.open("../game/images/track" + str(self.count) + ".jpg")
