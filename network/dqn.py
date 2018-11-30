@@ -268,12 +268,13 @@ with tf.Session() as sess:
         ###todo implement q learning algorithm
         if done:
             obs = env.reset()
-            env.track.update_input()
-            env.track.update_screen()
+            #env.track.update_input()
+            #env.track.update_screen()
             # preprocess state to pass to q network
             state = preprocess_obs(obs)
             # feeding state to q network
             iteration += 1
+            
         if env.configuration != "vm":
             env.track.update_input()
             env.track.update_screen()
