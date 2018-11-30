@@ -21,13 +21,14 @@ class track:
             self.screen = pygame.display.set_mode((880, 880))
         except pygame.error as message:
             #create green array
-            self.screen = []
+            arr = []
+            self.screen = pygame.display
             for i in range(880):
                 for j in range(880):
-                    self.screen.append([0, 100, 30])
+                    arr.append([0, 100, 30])
 
             self.screen = np.reshape(self.screen, [880, 880, 3])
-            self.screen = pygame.pixelcopy.array_to_surface(self.screen)
+            self.screen = pygame.pixelcopy.array_to_surface(self.screen, arr)
             return 1
 
         if car == None:
