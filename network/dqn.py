@@ -111,7 +111,7 @@ class Environment:
         return self.state, self.reward, self.done, 1
 
     def reset(self):
-        self.agent = car(self.carCt)
+        self.agent = car.Car(self.carCt)
         self.track = track()
         self.track.drawTrack()
         self.track.update_screen()
