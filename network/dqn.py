@@ -4,7 +4,7 @@ import os
 import sys
 
 sys.path.append("../game/car.py")
-sys.path.insert("../game/track.py")
+sys.path.append("../game/track.py")
 import random
 from skimage import color
 from collections import deque
