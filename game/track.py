@@ -25,7 +25,7 @@ class track:
             self.screen = pygame.display
             for i in range(880):
                 for j in range(880):
-                    arr.append([0, 100, 30])
+                    arr[i][j] = [0, 100, 30]
 
             self.screen = np.reshape(self.screen, [880, 880, 3])
             self.screen = pygame.pixelcopy.array_to_surface(self.screen, arr)
