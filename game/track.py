@@ -21,7 +21,7 @@ class track:
             self.screen = pygame.display.set_mode((880, 880))
         except pygame.error as message:
             #create green array
-            arr = []
+            arr = list[880][880]
             self.screen = pygame.display
             for i in range(880):
                 for j in range(880):
