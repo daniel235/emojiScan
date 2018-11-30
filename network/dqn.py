@@ -4,8 +4,8 @@ import os
 import random
 from skimage import color
 from collections import deque
-from track import track
-from car import Car
+from game.track import track
+from game.car import Car
 
 
 
@@ -93,10 +93,11 @@ class Environment:
             self.state = self.track.save_image()
             penalty = self.identify_state(self.state)
             #if car near end reward
-            if self.track.car.x - self.track.endPos[0] < 30 and self.track.car.y - self.track.endPos[1] < 30:
+            if self.track.car.x - self.track.endPos[0] < 50 and self.track.car.y - self.track.endPos[1] < 50:
+                print("done")
                 self.reward = 1
                 self.done = True
-            if penalty != -3:
+            elif penalty != -3:
                 self.reward = (1 / max(penalty, 1)) / 5
             else:
                 self.reward = 0
