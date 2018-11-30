@@ -17,22 +17,26 @@ class track:
         self.car = None
 
     def drawTrack(self, car=None):
+        check = False
         pygame.init()
         try:
             self.screen = pygame.display.set_mode((880, 880))
         except pygame.error as message:
             #create green array
+            check = True
             self.screen = np.zeros((880, 880, 3))
             for i in range(880):
                 for j in range(880):
                     self.screen[i][j] = [0, 100, 30]
-            return 1
 
         if car == None:
             self.car = c.Car(0)
 
         self.car.createCar()
 
+        if check:
+            return 1
+        
         return 0
 
     def update_input(self, vm=False):
