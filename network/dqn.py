@@ -274,7 +274,7 @@ with tf.Session() as sess:
             state = preprocess_obs(obs)
             # feeding state to q network
             iteration += 1
-            
+
         if env.configuration != "vm":
             env.track.update_input()
             env.track.update_screen()

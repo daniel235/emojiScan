@@ -14,6 +14,7 @@ class track:
         self.id = None
         self.screen = None
         self.endPos = (650, 10)
+        self.car = None
 
     def drawTrack(self, car=None):
         pygame.init()
