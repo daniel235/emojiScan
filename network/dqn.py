@@ -2,6 +2,7 @@ import tensorflow as tf
 import numpy as np
 import os
 import sys
+import math
 
 sys.path.append("../game")
 
@@ -53,7 +54,7 @@ class Environment:
         height = self.track.car.boundary["y"]
         #making sure car doesn't go out of bounds
         if pos[0] < 15 or pos[0] > 785 or pos[1] < 15 or pos[1] > 735:
-            return -3
+            return -3, 100
 
         for i in range(height):
             #left wall
@@ -79,24 +80,27 @@ class Environment:
             else:
                 white += 1
 
+        #find distance to target
+        distance = max(0, math.sqrt(((pos[0] - self.track.endPos[0]) * (pos[0] - self.track.endPos[0]) + ((pos[1] - self.track.endPos[1]) & (pos[1] - self.track.endPos[1])))))
+
 
         ratio = white / max(green, 1)
         print("ratio ", ratio, "green ", green, "white ", white)
 
-        return green
+        return green, distance
 
     def step(self, action):
         self.track.car.control(action)
         if self.track.car != None and self.configuration != "vm":
             self.state = self.track.save_image()
-            penalty = self.identify_state(self.state)
+            penalty, distance = self.identify_state(self.state)
             #if car near end reward
             if self.track.car.x - self.track.endPos[0] < 50 and self.track.car.y - self.track.endPos[1] < 50:
                 print("done")
                 self.reward = 1
                 self.done = True
             elif penalty != -3:
-                self.reward = (1 / max(penalty, 1)) / 5
+                self.reward = (1 / (max(penalty, 1) + distance))
             else:
                 self.reward = 0
                 self.done = True
@@ -246,7 +250,7 @@ learning_rate = 0.001
 n_steps = 400000
 training_start = 1000
 training_interval = 100
-save_steps = 1000
+save_steps = 300
 copy_steps = 10000
 discount_rate = 0.99
 skip_start = 90 #skip start of every game

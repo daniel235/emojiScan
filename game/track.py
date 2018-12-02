@@ -22,12 +22,31 @@ class track:
         try:
             self.screen = pygame.display.set_mode((880, 880))
         except pygame.error as message:
+            #create street
+
+            street = []
             #create green array
             check = True
             self.screen = np.zeros((880, 880, 3))
+
+            pygame.draw.rect(self.screen, (255, 255, 255), [400, 300, 130, 500])
+            pygame.draw.rect(self.screen, (255, 255, 255), [400, 300, 350, 100])
+            pygame.draw.rect(self.screen, (255, 255, 255), [620, 0, 130, 400])
+            pygame.draw.circle(self.screen, (100, 0, 0), (650, 10), 20)
             for i in range(880):
                 for j in range(880):
                     self.screen[i][j] = [0, 100, 30]
+                    #y first
+                    if i in range(300, 800):
+                        if j in range(400, 530):
+                            self.screen[i][j] = [255, 255, 255]
+                    if i in range(300, 400):
+                        if j in range(400, 750):
+                            self.screen[i][j] = [255, 255, 255]
+
+                    if i in range(0, 400):
+                        if j in range(620, 750):
+                            self.screen[i][j] = [255, 255, 255]
 
         if car == None:
             self.car = c.Car(0)
@@ -36,7 +55,7 @@ class track:
 
         if check:
             return 1
-        
+
         return 0
 
     def update_input(self, vm=False):
