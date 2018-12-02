@@ -92,7 +92,7 @@ class Environment:
     def step(self, action):
         self.track.car.control(action)
 
-        if(self.configuration = "vm"):
+        if(self.configuration == "vm"):
             self.state = self.track.save_image(True)
         else:
             self.state = self.track.save_image()
