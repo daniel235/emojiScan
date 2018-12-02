@@ -91,22 +91,24 @@ class Environment:
 
     def step(self, action):
         self.track.car.control(action)
-        if self.track.car != None and self.configuration != "vm":
-            self.state = self.track.save_image()
-            penalty, distance = self.identify_state(self.state)
-            #if car near end reward
-            if self.track.car.x - self.track.endPos[0] < 50 and self.track.car.y - self.track.endPos[1] < 50:
-                print("done")
-                self.reward = 1
-                self.done = True
-            elif penalty != -3:
-                self.reward = (1 / (max(penalty, 1) + distance))
-            else:
-                self.reward = 0
-                self.done = True
 
-        else:
+        if(self.configuration = "vm"):
             self.state = self.track.save_image(True)
+        else:
+            self.state = self.track.save_image()
+
+        penalty, distance = self.identify_state(self.state)
+        #if car near end reward
+        if self.track.car.x - self.track.endPos[0] < 50 and self.track.car.y - self.track.endPos[1] < 50:
+            print("done")
+            self.reward = 1
+            self.done = True
+        elif penalty != -3:
+            self.reward = (1 / (max(penalty, 1) + distance))
+        else:
+            self.reward = 0
+            self.done = True
+
 
         print("reward ", self.reward)
         return self.state, self.reward, self.done, 1
