@@ -316,7 +316,8 @@ with tf.Session() as sess:
         #################################
         accuracy = ovReward / (gameIteration % 100)
         if gameIteration % 500 == 0:
-            file.write("gameIteration ", str(accuracy))
+            accuracy = int(accuracy)
+            file.write("gameIteration " + str(accuracy))
         #################################
 
         if iteration < training_start or iteration % training_interval != 0:
