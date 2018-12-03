@@ -163,8 +163,6 @@ def q_network(X_state, name):
                               for var in trainable_vars}
     return outputs, trainable_vars_by_name
 
-
-
 X_state = tf.placeholder(tf.float32, shape=[None, input_height, input_width, input_channels], name="x_state")
 
 
@@ -252,7 +250,7 @@ learning_rate = 0.001
 n_steps = 400000
 training_start = 1000
 training_interval = 100
-save_steps = 300
+save_steps = 100
 copy_steps = 10000
 discount_rate = 0.99
 skip_start = 90 #skip start of every game
@@ -261,12 +259,16 @@ iteration = 0 #game iterations
 step = 0 #step
 checkpoint_path = "./my_dqn.ckpt"
 done = True
+gameIteration = 0
+ovReward = 0
 
 
 with tf.Session() as sess:
     if os.path.isfile(checkpoint_path + ".index"):
+        print("reloaded")
         saver.restore(sess, checkpoint_path)
     else:
+        print("init run")
         init.run()
 
     while iteration < n_steps:
@@ -278,8 +280,8 @@ with tf.Session() as sess:
             #env.track.update_screen()
             # preprocess state to pass to q network
             state = preprocess_obs(obs)
+            gameIteration += 1
             # feeding state to q network
-            iteration += 1
 
         if env.configuration != "vm":
             env.track.update_input()
@@ -287,14 +289,22 @@ with tf.Session() as sess:
         else:
             env.track.update_input(True)
             env.track.update_screen(True)
-        step = global_step.eval()
 
+        iteration += 1
+
+        #step = global_step.eval(sess)
+        step += 1
+        global_step.assign(step)
+        #print(global_step.eval(sess))
+        print("step ", step)
         q_values = online_q_values.eval(feed_dict={X_state: [state]})
 
         action = epsilon_greedy(q_values, step)
 
         # online dqn plays
         obs, reward, done, info = env.step(action)
+        if reward == 1:
+            ovReward += 1
 
         next_state = preprocess_obs(obs)
 
@@ -302,6 +312,9 @@ with tf.Session() as sess:
         replay_memory.append((state, action, reward, next_state, 1.0 - done))
         state = next_state
 
+        #################################
+        accuracy = ovReward / (gameIteration % 100)
+        #################################
 
         if iteration < training_start or iteration % training_interval != 0:
             continue
@@ -319,8 +332,8 @@ with tf.Session() as sess:
             copy_online_to_target.run()
         # and save regularly
         if step % save_steps == 0:
+            print("saved")
             saver.save(sess, checkpoint_path)
 
-        step += 1
 
 
