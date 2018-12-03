@@ -262,6 +262,7 @@ done = True
 gameIteration = 0
 ovReward = 0
 
+file = open("./results.txt", 'w')
 
 with tf.Session() as sess:
     if os.path.isfile(checkpoint_path + ".index"):
@@ -314,6 +315,8 @@ with tf.Session() as sess:
 
         #################################
         accuracy = ovReward / (gameIteration % 100)
+        if gameIteration % 500 == 0:
+            file.write("gameIteration ", str(accuracy))
         #################################
 
         if iteration < training_start or iteration % training_interval != 0:
