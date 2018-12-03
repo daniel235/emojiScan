@@ -318,6 +318,7 @@ with tf.Session() as sess:
         if gameIteration % 500 == 0:
             accuracy = int(accuracy)
             file.write("gameIteration " + str(accuracy))
+            file.close()
         #################################
 
         if iteration < training_start or iteration % training_interval != 0:
