@@ -321,7 +321,7 @@ with tf.Session() as sess:
 
         #################################
         if gameIteration % 5 == 0:
-            accuracy = ovReward / (gameIteration % 100)
+            accuracy = ovReward / (max(1, gameIteration) % 100)
             accuracy = int(accuracy)
             try:
                 file.write("gameIteration " + str(accuracy))

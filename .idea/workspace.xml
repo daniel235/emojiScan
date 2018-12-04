@@ -57,13 +57,13 @@
         <counts>
           <entry key="dummy" value="8" />
           <entry key="gitignore" value="5" />
-          <entry key="py" value="22542" />
+          <entry key="py" value="22552" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="13" />
-          <entry key="Python" value="22542" />
+          <entry key="Python" value="22552" />
         </counts>
       </usages-collector>
     </session>
@@ -77,14 +77,14 @@
         <entry file="file://$PROJECT_DIR$/network/dqn.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="391">
-              <caret line="260" column="20" selection-start-line="260" selection-start-column="20" selection-end-line="260" selection-end-column="20" />
+              <caret line="323" column="63" lean-forward="true" selection-start-line="323" selection-start-column="63" selection-end-line="323" selection-end-column="63" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
-                <marker date="1543945464425" expanded="true" signature="542:547" ph="..." />
-                <marker date="1543945464425" expanded="true" signature="1019:1028" ph="..." />
-                <marker date="1543945464425" expanded="true" signature="3363:3369" ph="..." />
-                <marker date="1543945464425" expanded="true" signature="6955:6960" ph="..." />
-                <marker date="1543945464425" expanded="true" signature="6955:7274" ph="..." />
+                <marker date="1543946037559" expanded="true" signature="542:547" ph="..." />
+                <marker date="1543946037559" expanded="true" signature="1019:1028" ph="..." />
+                <marker date="1543946037559" expanded="true" signature="3363:3369" ph="..." />
+                <marker date="1543946037559" expanded="true" signature="6955:6960" ph="..." />
+                <marker date="1543946037559" expanded="true" signature="6955:7274" ph="..." />
               </folding>
             </state>
           </provider>
@@ -525,14 +525,14 @@
     <entry file="file://$PROJECT_DIR$/network/dqn.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
-          <caret line="260" column="20" selection-start-line="260" selection-start-column="20" selection-end-line="260" selection-end-column="20" />
+          <caret line="323" column="63" lean-forward="true" selection-start-line="323" selection-start-column="63" selection-end-line="323" selection-end-column="63" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
-            <marker date="1543945464425" expanded="true" signature="542:547" ph="..." />
-            <marker date="1543945464425" expanded="true" signature="1019:1028" ph="..." />
-            <marker date="1543945464425" expanded="true" signature="3363:3369" ph="..." />
-            <marker date="1543945464425" expanded="true" signature="6955:6960" ph="..." />
-            <marker date="1543945464425" expanded="true" signature="6955:7274" ph="..." />
+            <marker date="1543946037559" expanded="true" signature="542:547" ph="..." />
+            <marker date="1543946037559" expanded="true" signature="1019:1028" ph="..." />
+            <marker date="1543946037559" expanded="true" signature="3363:3369" ph="..." />
+            <marker date="1543946037559" expanded="true" signature="6955:6960" ph="..." />
+            <marker date="1543946037559" expanded="true" signature="6955:7274" ph="..." />
           </folding>
         </state>
       </provider>
