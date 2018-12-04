@@ -268,7 +268,7 @@ done = True
 gameIteration = 0
 ovReward = 0
 
-file = open("./results.txt", 'w')
+file = open("./results.txt", 'a')
 
 with tf.Session() as sess:
     if os.path.isfile(checkpoint_path + ".index"):
@@ -326,7 +326,7 @@ with tf.Session() as sess:
             try:
                 file.write("gameIteration " + str(accuracy))
             except ValueError:
-                file = open("./results.txt", 'w')
+                file = open("./results.txt", 'a')
                 file.write("gameIteration " + str(accuracy))
             file.close()
             ovReward = 0
