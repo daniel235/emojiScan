@@ -111,7 +111,8 @@ class Environment:
 
         self.time -= 1
         if self.time <= 0:
-            done = True
+            print("timeout")
+            self.done = True
 
 
         print("reward ", self.reward)
@@ -319,11 +320,16 @@ with tf.Session() as sess:
         state = next_state
 
         #################################
-        accuracy = ovReward / (gameIteration % 100)
         if gameIteration % 100 == 0:
+            accuracy = ovReward / (gameIteration % 100)
             accuracy = int(accuracy)
-            file.write("gameIteration " + str(accuracy))
+            try:
+                file.write("gameIteration " + str(accuracy))
+            except ValueError:
+                file = open("./results.txt", 'w')
+                file.write("gameIteration " + str(accuracy))
             file.close()
+            ovReward = 0
         #################################
 
         if iteration < training_start or iteration % training_interval != 0:
