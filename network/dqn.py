@@ -301,7 +301,7 @@ with tf.Session() as sess:
 
         #step = global_step.eval(sess)
 
-        step = global_step.eval()
+        step = global_step.eval(sess)
         #print(global_step.eval(sess))
         print("step ", step)
         q_values = online_q_values.eval(feed_dict={X_state: [state]})
