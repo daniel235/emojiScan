@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0ade4954-2977-4305-8fae-08342ded68dd" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/game/images/track0.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/game/images/track0.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/network/dqn.py" beforeDir="false" afterPath="$PROJECT_DIR$/network/dqn.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/network/results.txt" beforeDir="false" afterPath="$PROJECT_DIR$/network/results.txt" afterDir="false" />
-    </list>
+    <list default="true" id="0ade4954-2977-4305-8fae-08342ded68dd" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,8 +74,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/network/dqn.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
-              <caret line="34" column="23" selection-start-line="34" selection-start-column="23" selection-end-line="34" selection-end-column="23" />
+            <state relative-caret-position="-4094">
+              <caret line="35" column="31" lean-forward="true" selection-start-line="35" selection-start-column="31" selection-end-line="35" selection-end-column="31" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
                 <marker date="1543946526568" expanded="true" signature="542:547" ph="..." />
@@ -344,7 +340,7 @@
       <window_info id="Favorites" order="2" sideWeight="0.50185186" side_tool="true" weight="0.14979757" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32938388" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49932525" visible="true" weight="0.2914692" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49932525" weight="0.2914692" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3992891" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -526,8 +522,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/network/dqn.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="34" column="23" selection-start-line="34" selection-start-column="23" selection-end-line="34" selection-end-column="23" />
+        <state relative-caret-position="-4094">
+          <caret line="35" column="31" lean-forward="true" selection-start-line="35" selection-start-column="31" selection-end-line="35" selection-end-column="31" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
             <marker date="1543946526568" expanded="true" signature="542:547" ph="..." />
