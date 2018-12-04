@@ -256,7 +256,7 @@ learning_rate = 0.01
 n_steps = 400000
 training_start = 500
 training_interval = 100
-save_steps = 100
+save_steps = 500
 copy_steps = 1000
 discount_rate = 0.98
 skip_start = 90 #skip start of every game
@@ -349,7 +349,7 @@ with tf.Session() as sess:
         # and save regularly
         if step % save_steps == 0:
             print("saved")
-            saver.save(sess, checkpoint_path)
+            saver.save(sess, checkpoint_path, global_step=step)
 
 
 
