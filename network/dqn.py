@@ -3,6 +3,7 @@ import numpy as np
 import os
 import sys
 import math
+import time
 
 sys.path.append("../game")
 
@@ -31,6 +32,7 @@ class Environment:
     def __init__(self):
         self.reward = 0
         self.state = None
+        self.time = 80
         self.action_space = 100
         self.done = False
         self.track = None
@@ -107,6 +109,11 @@ class Environment:
             self.done = True
 
 
+        self.time -= 1
+        if self.time <= 0:
+            done = True
+
+
         print("reward ", self.reward)
         return self.state, self.reward, self.done, 1
 
@@ -121,6 +128,7 @@ class Environment:
             self.state = self.track.save_image(True)
 
         self.done = False
+        self.time = 80
         return self.state
 
 
@@ -231,7 +239,7 @@ def preprocess_obs(obs):
 
 
 def epsilon_greedy(q_values, step):
-    epsilon = max(eps_min, eps_max - (eps_max-eps_min) * step/eps_decay_steps)
+    epsilon = max(eps_min, eps_max - (eps_max-eps_min) * (step * 5)/eps_decay_steps)
     if np.random.rand() < epsilon:
         return np.random.randint(n_outputs)
 
@@ -312,7 +320,7 @@ with tf.Session() as sess:
 
         #################################
         accuracy = ovReward / (gameIteration % 100)
-        if gameIteration % 500 == 0:
+        if gameIteration % 100 == 0:
             accuracy = int(accuracy)
             file.write("gameIteration " + str(accuracy))
             file.close()
