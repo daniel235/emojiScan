@@ -32,7 +32,7 @@ class Environment:
     def __init__(self):
         self.reward = 0
         self.state = None
-        self.time = 80
+        self.time = 200
         self.action_space = 100
         self.done = False
         self.track = None
@@ -129,7 +129,7 @@ class Environment:
             self.state = self.track.save_image(True)
 
         self.done = False
-        self.time = 80
+        self.time = 200
         return self.state
 
 
