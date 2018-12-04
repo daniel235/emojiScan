@@ -268,7 +268,7 @@ done = True
 gameIteration = 0
 ovReward = 0
 
-file = open("./results.txt", 'a')
+file = open("./results.txt", "a")
 
 with tf.Session() as sess:
     if os.path.isfile(checkpoint_path + ".index"):
@@ -300,8 +300,8 @@ with tf.Session() as sess:
         iteration += 1
 
         #step = global_step.eval(sess)
-        step += 1
-        global_step.assign(step)
+
+        step = global_step.eval()
         #print(global_step.eval(sess))
         print("step ", step)
         q_values = online_q_values.eval(feed_dict={X_state: [state]})
@@ -320,13 +320,13 @@ with tf.Session() as sess:
         state = next_state
 
         #################################
-        if gameIteration % 100 == 0:
+        if gameIteration % 5 == 0:
             accuracy = ovReward / (gameIteration % 100)
             accuracy = int(accuracy)
             try:
                 file.write("gameIteration " + str(accuracy))
             except ValueError:
-                file = open("./results.txt", 'a')
+                file = open("./results.txt", "a")
                 file.write("gameIteration " + str(accuracy))
             file.close()
             ovReward = 0
