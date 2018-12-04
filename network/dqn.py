@@ -62,9 +62,6 @@ class Environment:
             #right wall
             self.box.append(("r", pos[0] + width + 5, pos[1] + i))
 
-            if i == 5:
-                for k in range(5):
-                    print(self.box[k])
 
         for j in range(width):
             #top -> add ten to top
@@ -226,7 +223,7 @@ def preprocess_obs(obs):
     img = (img - 128)/ 128 - 1
 
     #show image
-    plt.imshow(img, interpolation="nearest")
+    #plt.imshow(img, interpolation="nearest")
     #plt.show()
 
     return img.reshape(88, 88, 1)
@@ -249,8 +246,8 @@ env = Environment()
 learning_rate = 0.001
 n_steps = 400000
 training_start = 1000
-training_interval = 100
-save_steps = 100
+training_interval = 1000
+save_steps = 1000
 copy_steps = 10000
 discount_rate = 0.99
 skip_start = 90 #skip start of every game
@@ -300,7 +297,7 @@ with tf.Session() as sess:
         print("step ", step)
         q_values = online_q_values.eval(feed_dict={X_state: [state]})
 
-        action = epsilon_greedy(q_values, step)
+        action = epsilon_greedy(q_values, gameIteration)
 
         # online dqn plays
         obs, reward, done, info = env.step(action)
