@@ -254,11 +254,11 @@ env = Environment()
 
 learning_rate = 0.01
 n_steps = 400000
-training_start = 5000
-training_interval = 1000
+training_start = 500
+training_interval = 100
 save_steps = 100
 copy_steps = 1000
-discount_rate = 0.99
+discount_rate = 0.98
 skip_start = 90 #skip start of every game
 batch_size = 50
 iteration = 0 #game iterations
