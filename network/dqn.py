@@ -252,12 +252,12 @@ def epsilon_greedy(q_values, step):
 env = Environment()
 ### hyperparameters ###
 
-learning_rate = 0.001
+learning_rate = 0.01
 n_steps = 400000
-training_start = 1000
+training_start = 5000
 training_interval = 1000
-save_steps = 1000
-copy_steps = 10000
+save_steps = 100
+copy_steps = 1000
 discount_rate = 0.99
 skip_start = 90 #skip start of every game
 batch_size = 50
@@ -327,7 +327,7 @@ with tf.Session() as sess:
                 file.write("gameIteration " + str(accuracy))
             except ValueError:
                 file = open("./results.txt", "a")
-                file.write("gameIteration " + str(accuracy))
+                file.write("gameIteration " + str(accuracy) + "\n")
             file.close()
             ovReward = 0
         #################################
